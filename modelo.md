@@ -77,8 +77,8 @@ A . . .
 * Propiedades: es **admisible** y **consistente** en este dominio.
 
 ---
-
-✅ Este modelamiento conceptual es la base previa antes de escribir código: permite tener claro **qué se busca, cómo se representa y cuáles son las reglas del entorno**.
+ 
+Este modelamiento conceptual es la base previa antes de escribir código: permite tener claro **qué se busca, cómo se representa y cuáles son las reglas del entorno**.
 
 
 
@@ -140,7 +140,7 @@ A . . .
 
 ---
 
-✅ Con este modelamiento se puede aplicar cualquier estrategia de búsqueda (BFS, DFS, A\*) sobre la misma base.
+Con este modelamiento se puede aplicar cualquier estrategia de búsqueda (BFS, DFS, A\*) sobre la misma base.
 
 
 

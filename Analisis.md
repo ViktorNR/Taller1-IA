@@ -26,9 +26,9 @@
 
 | Algoritmo | Camino (pasos) | Nodos expandidos | Optimalidad | Eficiencia |
 | --------- | -------------- | ---------------- | ----------- | ---------- |
-| **BFS**   | Óptimo         | Alto             | ✔️ Sí       | Baja       |
-| **DFS**   | No óptimo      | Variable         | ❌ No        | Media      |
-| **A**\*   | Óptimo         | Bajo             | ✔️ Sí       | Alta       |
+| **BFS**   | Óptimo         | Alto             | ️ Sí       | Baja       |
+| **DFS**   | No óptimo      | Variable         |  No        | Media      |
+| **A**\*   | Óptimo         | Bajo             | ️ Sí       | Alta       |
 
 ---
 
@@ -38,4 +38,4 @@
 * **DFS** puede ser útil en entornos pequeños o cuando se busca solo "alguna solución", pero no es recomendable si se necesita optimalidad.
 * **A**\* combina lo mejor de ambos mundos: logra la solución óptima como BFS, pero con mucha mayor eficiencia al reducir la exploración innecesaria.
 
-➡️ En este problema del Mundo del Wumpus simplificado, **A**\* es la estrategia más recomendable porque garantiza el camino más corto con la menor cantidad de nodos expandidos.
+En este problema del Mundo del Wumpus simplificado, **A**\* es la estrategia más recomendable porque garantiza el camino más corto con la menor cantidad de nodos expandidos.

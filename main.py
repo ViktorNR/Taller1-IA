@@ -7,17 +7,7 @@ import copy
 import random
 
 def generar_mapa(n=20, prob_pozo=0.1, seed=None):
-    """
-    Genera un mapa NxN para el Mundo del Wumpus.
 
-    Args:
-        n (int): tamaño de la grilla (por defecto 20x20).
-        prob_pozo (float): probabilidad de que una celda libre sea un pozo.
-        seed (int): semilla opcional para reproducibilidad.
-
-    Returns:
-        list[list[str]]: grilla NxN con A, G, P y .
-    """
     if seed is not None:
         random.seed(seed)
 
@@ -88,15 +78,12 @@ for grid in GRIDS:
 
 
     def neighbors(r, c):
-        """Acciones aplicables: movimiento a celdas adyacentes libres."""
         for dr, dc in DIRS4:
             nr, nc = r + dr, c + dc
             if in_bounds(nr, nc) and passable(nr, nc):
                 yield (nr, nc)
 
     def reconstruct(parent, goal):
-        """Reconstruye la ruta desde el inicio hasta ’goal’ usando el diccionario ’
-        parent’."""
         path = []
         cur = goal
         while cur is not None:
@@ -144,7 +131,6 @@ for grid in GRIDS:
         return None, expanded
 
     def manhattan(a, b):
-        """Heurística Manhattan: distancia en rejilla (N,S,E,O)."""
         (r1, c1), (r2, c2) = a, b
         return abs(r1 - r2) + abs(c1 - c2)
 
@@ -174,14 +160,6 @@ for grid in GRIDS:
 
 
     def plot_path(path, expanded=None, title="Camino encontrado"):
-        """
-        Función para graficar el camino encontrado en el mundo del Wumpus
-
-        Args:
-            path: Lista de posiciones (tuplas) que forman el camino
-            expanded: Lista opcional de posiciones expandidas durante la búsqueda
-            title: Título del gráfico
-        """
         # Crear una matriz numérica para el mapa
         # 0 = libre, 1 = pozo, 2 = agente, 3 = oro, 4 = camino, 5 = expandidos
         mapa = []
@@ -263,8 +241,6 @@ for grid in GRIDS:
         plt.xticks([])
         plt.yticks([])
 
-        # Crear leyenda
-        # Crear leyenda con la paleta actual
         legend_elements = [
             plt.Rectangle((0, 0), 1, 1, facecolor="#e0e0e0", edgecolor="black", label="Libre"),
             plt.Rectangle((0, 0), 1, 1, facecolor="#c62828", edgecolor="black", label="Pozo"),
@@ -282,7 +258,6 @@ for grid in GRIDS:
 
 
     def show_path(path, grid):
-        """Devuelve una copia del grid con la ruta marcada con '*'."""
         g = copy.deepcopy(grid)
         if path is None:
             return g  # No hay camino
